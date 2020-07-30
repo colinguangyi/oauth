@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        background-color: white;
+    }
+
+    .login-container {
+        top: 10px;
+        margin: 0;
+        width: 100%;
+        background-color: white;
+    }
+
+    .form-container {
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+        box-shadow: 1px 1px 10px #888888;
+        height: 300px;
+        padding: 5px;
+        background-color: azure;
+    }
+
+    input {
+        margin-top: 10px;
+        width: 350px;
+        height: 30px;
+        border-radius: 3px;
+        border: 1px #e90908 solid;
+        padding-left: 2px;
+
+    }
+    .btn {
+        width: 350px;
+        height: 35px;
+        line-height: 35px;
+        cursor: pointer;
+        margin-top: 20px;
+        border-radius: 3px;
+        background-color: #e90908;
+        color: white;
+        border: none;
+        font-size: 15px;
+    }
+
+    .title{
+        margin-top: 5px;
+        font-size: 18px;
+        color: #e90908;
+    }
+</style>
+<body>
+<div class="login-container">
+    <div class="form-container">
+        <p class="title">模拟第三方登陆页面</p>
+        <form name="loginForm" method="post" action="/login">
+            <input type="text" name="username" placeholder="用户名"/>
+            <br>
+            <input type="password" name="password" placeholder="密码"/>
+            <br>
+            <button type="submit" class="btn">登 &nbsp;&nbsp; 录</button>
+        </form>
+        <p style="color: red" th:if="${error}" th:text="${error}"></p>
+    </div>
+</div>
+</body>
+</html>
